@@ -55,7 +55,7 @@ Private Sub App_WorkbookOpen(ByVal wb As Workbook)
     Dim importNow As Integer
     importNow = MsgBox("Import the code for " & wb.name & " now?", vbYesNo, "EventListener Workbook open event")
     If importNow = vbYes Then
-        Build.importVbaCode wb.VBProject
+        Build.importVbaCode wb.VBProject, , True
         NamedRanges.importNamedRanges wb
     End If
 
